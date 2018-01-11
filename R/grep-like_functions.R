@@ -1,22 +1,29 @@
+#' Variations on grep with different defaults, for convenience.
+#'
+#' Three convenient variations on \code{grep()} with modified defaults.  The suffix 'i' means ignore case and the suffix 'v' means return values.
+#' @param pattern character string containing a regular expression (see \code{\link{grep}})
+#' @param x a character vector where matches are sought (see \code{grep})
+#' @param ... other \code{grep()} parameters; see Details.
+#'
+#' @details
+#' These functions also accept other \code{grep} parameters (apart from \code{value=} and \code{ignore.case=}), specifically: \code{perl=}, \code{fixed=}, \code{useBytes=} and \code{invert=}.
+#' @describeIn grepvi return values, ignoring case.
+#' @examples
+#' grepvi('[aeiou]', c(letters,LETTERS))
+#' grepi('[aeiou]', c(letters,LETTERS))
+#' grepv('[aeiou]', c(letters,LETTERS))
+# can't seem to get this to work: @seealso \link{%like%}
+#' @seealso \link{like}
+#' @export
+grepvi = function(pattern, x, ...)
+  grep(pattern=pattern, x=x, ..., value=TRUE, ignore.case=TRUE)
 
 #' @export
-grepi = function(...) grep(..., ignore.case=TRUE)
+#' @describeIn grepvi the familiar grep but ignoring case.
+grepi = function(pattern, x, ...)
+  grep(pattern=pattern, x=x, ..., ignore.case=TRUE)
 
 #' @export
-grepv = function(...) grep(..., value=TRUE)
-
-#' @export
-grepvi = function(...) grep(..., value=TRUE, ignore.case=TRUE)
-
-#' @export
-`%like%` = function(x, y) grepl(y, x, ignore.case=TRUE)
-
-#' @export
-`%Like%` = function(x, y) grepl(y, x)
-
-#' @export
-`%unlike%` = function(x, y) !grepl(y, x, ignore.case=TRUE)
-
-#' @export
-`%Unlike%` = function(x, y) !grepl(y, x)
-
+#' @describeIn grepvi case-sensitive grep returning values.
+grepv = function(pattern, x, ...)
+  grep(pattern=pattern, x=x, ..., value=TRUE)

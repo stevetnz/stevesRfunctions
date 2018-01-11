@@ -4,7 +4,7 @@
 \alias{NoYes}
 \title{Convert a logical vector to a factor}
 \usage{
-NoYes(bool)
+NoYes(bool, ifFALSE = "No", ifTRUE = "Yes")
 }
 \arguments{
 \item{bool}{A logical vector, or a vector that can be coerced to logical.}
@@ -13,5 +13,7 @@ NoYes(bool)
 A factor with levels combining the unique levels of the input factors.
 }
 \description{
-Convert a logical vector to a factor
+Converts a logical vector to a factor conatining two levels.
+This is useful in statistical models such as logistic regression,
+both for the dependent variable and the explanatory variables.
 }
