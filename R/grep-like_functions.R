@@ -12,8 +12,7 @@
 #' grepvi('[aeiou]', c(letters,LETTERS))
 #' grepi('[aeiou]', c(letters,LETTERS))
 #' grepv('[aeiou]', c(letters,LETTERS))
-# can't seem to get this to work: @seealso \link{%like%}
-#' @seealso \link{like}
+#' @seealso \link{\%like\%}
 #' @export
 grepvi = function(pattern, x, ...)
   grep(pattern=pattern, x=x, ..., value=TRUE, ignore.case=TRUE)

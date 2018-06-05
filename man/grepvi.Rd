@@ -40,5 +40,5 @@ grepi('[aeiou]', c(letters,LETTERS))
 grepv('[aeiou]', c(letters,LETTERS))
 }
 \seealso{
-\link{like}
+\link{\%like\%}
 }

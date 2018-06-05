@@ -8,12 +8,16 @@ NoYes(bool, ifFALSE = "No", ifTRUE = "Yes")
 }
 \arguments{
 \item{bool}{A logical vector, or a vector that can be coerced to logical.}
-}
-\value{
-A factor with levels combining the unique levels of the input factors.
+
+\item{ifFALSE}{factor level for FALSE values, defaults to "No".}
+
+\item{ifTRUE}{factor level for TRUE values, defaults to "Yes".}
 }
 \description{
 Converts a logical vector to a factor conatining two levels.
 This is useful in statistical models such as logistic regression,
 both for the dependent variable and the explanatory variables.
+}
+\examples{
+table(NoYes(rnorm(100) > 0.5))
 }

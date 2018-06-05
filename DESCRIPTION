@@ -1,9 +1,10 @@
 Package: stevesRfunctions
-Title: Collection of Miscellaneous R Helper Functions
-Version: 0.1
+Title: My Collection of Miscellaneous R Functions
+Version: 1.0
 Authors@R: person("Steve", "Taylor", email = "steve.taylor.nz@gmail.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Description: A mixed bag of functions I've written over the years.
 Depends: R (>= 3.3.0)
+Imports: methods, utils, stats, grDevices
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
