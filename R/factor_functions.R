@@ -5,14 +5,13 @@
 #' both for the dependent variable and the explanatory variables.
 #'
 #' @param bool A logical vector, or a vector that can be coerced to logical.
-#' @param ifFALSE factor level for FALSE values, defaults to "No".
-#' @param ifTRUE factor level for TRUE values, defaults to "Yes".
-#' @value A factor with two levels.
+#' @param levels Two factor levels for FALSE and TRUE values, respectively.
+#' @return A factor with two levels.
 #' @examples
 #' table(NoYes(LETTERS %in% c('A','E','I','O','U')))
-#' table(NoYes(rnorm(100) > 0.5))
+#' table(NoYes(runif(100) > 0.5, c('Tails', 'Heads')))
 #' @export
-NoYes = function(bool, ifFALSE='No', ifTRUE='Yes') {
+NoYes = function(bool, levels=c('No', 'Yes')) {
   if(!is.logical(bool)) bool = as.logical(bool)
-  factor(ifelse(bool, ifTRUE, ifFALSE), levels=c(ifFALSE, ifTRUE))
+  factor(bool, levels=c(FALSE,TRUE), labels=levels)
 }

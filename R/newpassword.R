@@ -6,7 +6,7 @@
 #' @param Letters Number of characters from \link{letters}/LETTERS to include.
 #' @param Numbers Number of digits from 0-9 to include.
 #' @param Symbols Number of symbol characters to include.
-#' @return A randomly generaged password.
+#' @return A randomly generated password.
 #' @examples
 #' # Defaults; easy to double-click, copy and paste.
 #' newpassword()

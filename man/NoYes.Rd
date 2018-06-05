@@ -2,16 +2,17 @@
 % Please edit documentation in R/factor_functions.R
 \name{NoYes}
 \alias{NoYes}
-\title{Convert a logical vector to a factor}
+\title{Convert a logical vector to a two-level factor}
 \usage{
-NoYes(bool, ifFALSE = "No", ifTRUE = "Yes")
+NoYes(bool, levels = c("No", "Yes"))
 }
 \arguments{
 \item{bool}{A logical vector, or a vector that can be coerced to logical.}
 
-\item{ifFALSE}{factor level for FALSE values, defaults to "No".}
-
-\item{ifTRUE}{factor level for TRUE values, defaults to "Yes".}
+\item{levels}{Two factor levels for FALSE and TRUE values, respectively.}
+}
+\value{
+A factor with two levels.
 }
 \description{
 Converts a logical vector to a factor conatining two levels.
@@ -19,5 +20,6 @@ This is useful in statistical models such as logistic regression,
 both for the dependent variable and the explanatory variables.
 }
 \examples{
-table(NoYes(rnorm(100) > 0.5))
+table(NoYes(LETTERS \%in\% c('A','E','I','O','U')))
+table(NoYes(runif(100) > 0.5, c('Tails', 'Heads')))
 }

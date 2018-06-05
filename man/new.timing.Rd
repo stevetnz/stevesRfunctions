@@ -4,7 +4,7 @@
 \alias{new.timing}
 \title{Timing class for recording computation times}
 \usage{
-\method{new}{timing}(processes = "process1")
+\method{new}{timing}(processes = "P1")
 }
 \arguments{
 \item{processes}{character vector for names of processes to follow.}
