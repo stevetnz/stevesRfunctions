@@ -15,12 +15,19 @@ x \%unlike\% y
 
 x \%Unlike\% y
 }
+\arguments{
+\item{x}{character vector to search}
+
+\item{y}{regular expression}
+}
 \description{
 Inspired by the "like" operator in SQL,
 these binary operators are a convenient way of using \code{\link{grepl}}.
 }
 \section{Functions}{
 \itemize{
+\item \code{\%like\%}: find matching values, ignoring case.
+
 \item \code{\%Like\%}: case-sensitive matching.
 
 \item \code{\%unlike\%}: finds non-matching values, ignoring case.

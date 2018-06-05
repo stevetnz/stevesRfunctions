@@ -22,6 +22,38 @@ heat.colours = function(n=20, alpha=1) {
 }
 
 
+
+# --------------------------------------------------------------------------------
+#' Transparent shades of grey or other colours
+#'
+#' Inspired by gels used in theatre lighting.
+#'
+#' @param alpha semi-transparency parameter (see \code{\link{rgb}})
+#' @param red,green,blue values between 0 and 1 for colour components
+#' @examples
+#' plot(rnorm(1000),rnorm(1000),pch=16,cex=3,col=gel(0.1))
+#' @export
+gel = function(alpha, red=0, green=0, blue=0) {
+  rgb(red=red, green=green, blue=blue, alpha=alpha)
+}
+
+
+# --------------------------------------------------------------------------------
+#' Pastel colours
+#'
+#' Similar to \code{\link{rainbow}} but producing more muted colours,
+#' derived using \code{\link{hcl}}.
+#'
+#' @param n the number of colours to produce.
+#' @examples
+#' barplot(table(sample(LETTERS,1000,repl=TRUE)),col=pastel(26))
+#' @export
+pastel = function(n, ...) {
+  hcl(seq(0, 360, length=n+2)[1:n], ...)
+}
+
+
+
 # --------------------------------------------------------------------------------
 #' An informative array plots on a numeric vector
 #'
